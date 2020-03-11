@@ -1,0 +1,22 @@
+{
+  "name": "backend-node-peaku",
+  "version": "1.0.0",
+  "description": "api rest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryanRiano/backend-node-peaku.git"
+  },
+  "author": "Brayan Riaño",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BryanRiano/backend-node-peaku/issues"
+  },
+  "homepage": "https://github.com/BryanRiano/backend-node-peaku#readme",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
