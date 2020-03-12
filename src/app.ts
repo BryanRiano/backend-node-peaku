@@ -35,7 +35,8 @@ export class App {
     }
 
     async listen() {
-        await this.app.listen(this.app.get('port'));
-        console.log('servidor iniciado en el puerto 3000');
+        const port = this.app.get('port');
+        this.app.listen(port);
+        console.log(`servidor iniciado en el puerto ${port}`);
     }
 }
