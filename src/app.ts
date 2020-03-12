@@ -7,6 +7,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerJsDoc from './swagger.json';
 
 export class App {
+    
 
     app : Application;
 
