@@ -22,6 +22,8 @@
     "@types/morgan": "^1.9.0",
     "@types/mysql2": "github:types/mysql2",
     "@types/sequelize": "^4.28.8",
+    "@types/swagger-jsdoc": "^3.0.2",
+    "@types/swagger-ui-express": "^4.1.1",
     "nodemon": "^2.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"
@@ -31,6 +33,7 @@
     "express": "^4.17.1",
     "morgan": "^1.9.1",
     "mysql2": "^2.1.0",
-    "sequelize": "^5.21.5"
+    "sequelize": "^5.21.5",
+    "swagger-ui-express": "^4.1.3"
   }
 }

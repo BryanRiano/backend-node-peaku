@@ -3,6 +3,8 @@ import morgan from 'morgan';
 import DeliveryRoutes from './routes/delivery.routes';
 import TaskRoutes from './routes/task.routes';
 import bodyParser from 'body-parser';
+import swaggerUi from 'swagger-ui-express';
+import swaggerJsDoc from './swagger.json';
 
 export class App {
 
@@ -26,6 +28,7 @@ export class App {
     }
 
     routes() {
+        this.app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerJsDoc));
         this.app.use('/delivery', DeliveryRoutes);
         this.app.use('/task', TaskRoutes);
     }

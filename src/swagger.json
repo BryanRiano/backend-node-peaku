@@ -1,0 +1,126 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0",
+        "title": "Api Rest Pedidos"
+    },
+    "definitions": {
+        "Pedidos": {
+            "type": "object",
+            "properties": {
+                "nombre": {
+                    "type": "string"
+                },
+                "apellidos": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "telefono": {
+                    "type": "string"
+                },
+                "direccionEntrega": {
+                    "type": "string"
+                },
+                "fechaEntrega": {
+                    "type": "string",
+                    "default": "2020-01-01"
+                },
+                "franjaHoraEntrega": {
+                    "type": "string"
+                }
+            }
+        },
+        "Tareas": {
+            "type": "object",
+            "properties": {
+                "idconductor": {
+                    "type": "number"
+                },
+                "idpedido": {
+                    "type": "number"
+                },
+                "fecha": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/delivery": {
+            "post": {
+                "tags": [
+                    "Delivery"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Objeto para crear pedido",
+                        "schema": {
+                            "$ref": "#/definitions/Pedidos"
+                        }
+                    }
+                ],
+                "summary": "Create a new order in system",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/Tareas"
+                        }
+                    },
+                    "400": {
+                        "description": "Error al crear pedido"
+                    }
+                }
+            }
+        },
+        "/task/{idconductor}/{fecha}": {
+            "parameters": [
+                {
+                    "name": "idconductor",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID del conductor",
+                    "type": "number"
+                },
+                {
+                    "name": "fecha",
+                    "in": "path",
+                    "required": true,
+                    "description": "fecha a buscar",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Tareas"
+                ],
+                "summary": "Obtener lista de tareas",
+                
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Tareas"
+                        }
+                    },
+                    "400": {
+                        "description": "Error al listar tareas"
+                    }
+                }
+            }
+        }
+    }
+}
