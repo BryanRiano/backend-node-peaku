@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
 import DeliveryRoutes from './routes/delivery.routes';
+import bodyParser from 'body-parser';
 
 export class App {
 
@@ -19,6 +20,8 @@ export class App {
 
     middlewares() {
         this.app.use(morgan('dev'));
+        this.app.use(bodyParser.json());
+        //this.app.use(bodyParser.urlencoded({ extended: false }));
     }
 
     routes() {
